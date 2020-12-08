@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import Payments from './Payments';
 
-
 class Header extends Component{
 
     renderContent(){
@@ -29,20 +28,42 @@ class Header extends Component{
     render() {
         return(
 
-            <nav>
-            <div className="nav-wrapper">
-                <Link 
-                    to={this.props.auth ? '/surveys' : '/'} 
-                    className="left brand-logo"
-                >
+            // <nav>
+            //     <div className="nav-wrapper">
+            //     <Link 
+            //         to={this.props.auth ? '/surveys' : '/'} 
+            //         className="left brand-logo"
+            //     >
+            //         Eamily
+            //     </Link>
+            //     <ul className="right hide-on-med-and-down">
+            //         {this.renderContent()}
+                    
+            //     </ul>
+            // </div> 
+
+            // </nav>
+            <div className="container">
+            <nav class="light-blue lighten-1" role="navigation">
+            <div class="nav-wrapper">
+        <Link to={this.props.auth ? '/surveys' : '/'} className="left brand-logo " style={{marginLeft: 2 + 'em'}}>
                     Eamily
                 </Link>
-                <ul className="right hide-on-med-and-down">
-                    {this.renderContent()}
-                    
-                </ul>
-            </div>
-            </nav>
+      <ul className="right hide-on-med-and-down">
+          {this.renderContent()}
+      </ul>
+
+      
+    </div>
+  </nav>
+  </div>
+
+        
+             
+
+
+         
+            
         );
     }
 }
